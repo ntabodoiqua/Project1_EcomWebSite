@@ -10,6 +10,11 @@ rel="stylesheet"
 integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
 crossorigin="anonymous">
 
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" 
+integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" 
+crossorigin="anonymous" 
+referrerpolicy="no-referrer" />
 <!-- css file -->  
  <link rel="stylesheet" href="../style.css">
 </head>
@@ -44,12 +49,12 @@ crossorigin="anonymous">
                     <p class="text-light text-center">NTA</p>
                 </div>
                 <div class="button text-center">
-                    <button class="my-3"><a href="" class="nav-link text-light bg-info my-1">Thêm sản phẩm</a></button>
+                    <button class="my-3"><a href="insert_product.php" class="nav-link text-light bg-info my-1">Thêm sản phẩm</a></button>
                     <button><a href="" class="nav-link text-light bg-info my-1">Xem sản phẩm</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">Thêm danh mục</a></button>
+                    <button><a href="index.php?insert_categories" class="nav-link text-light bg-info my-1">Thêm danh mục</a></button>
                     <button><a href="" class="nav-link text-light bg-info my-1">Xem danh mục</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">Thêm nhãn hàng</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">Xem nhãn hàng</a></button>
+                    <button><a href="index.php?insert_brands" class="nav-link text-light bg-info my-1">Thêm hãng</a></button>
+                    <button><a href="" class="nav-link text-light bg-info my-1">Xem hãng</a></button>
                     <button><a href="" class="nav-link text-light bg-info my-1">Tất cả đơn đặt hàng</a></button>
                     <button><a href="" class="nav-link text-light bg-info my-1">Tất cả thanh toán</a></button>
                     <button><a href="" class="nav-link text-light bg-info my-1">Danh sách người dùng</a></button>
@@ -59,6 +64,26 @@ crossorigin="anonymous">
           </div>
      </div>
 
+
+     <!-- fourth child -->
+<div class="container my-3">
+    <?php
+    if(isset($_GET['insert_categories'])) {
+        include('insert_categories.php');
+    }
+    if(isset($_GET['insert_brands'])) {
+        include('insert_brands.php');
+    }
+    ?>
+</div>
+
+
+
+     <!-- last child -->
+ <div class="bg-info p-2 text-center">
+    <p>All Rights Reserved (©) Designed by NTA - 2024 - SOICT</p>
+ </div>
+     </div>
 <!-- bootstrap js link -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
