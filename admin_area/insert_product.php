@@ -25,9 +25,9 @@ if(isset($_POST['insert_product'])){
         echo "<script>alert('Hãy điền hết các ô trống!')</script>";
         exit();
     } else{
-        move_uploaded_file($temp_image1,"./product_images/product_image1");
-        move_uploaded_file($temp_image2,"./product_images/product_image2");
-        move_uploaded_file($temp_image3,"./product_images/product_image3");
+        move_uploaded_file($temp_image1,"./product_images/$product_image1");
+        move_uploaded_file($temp_image2,"./product_images/$product_image2");
+        move_uploaded_file($temp_image3,"./product_images/$product_image3");
         // insert query
         $insert_products="insert into `products` (product_title, product_description, product_keyword, category_id, brand_id,
                             product_image1, product_image2, product_image3, product_price, date, status) 
