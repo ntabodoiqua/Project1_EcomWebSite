@@ -4,7 +4,7 @@ include('includes/connect.php');
 include('functions/common_functions.php');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,7 +51,7 @@ referrerpolicy="no-referrer" />
           <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping"></i><sup><?php cart_item();?></sup> Giỏ hàng </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Tổng tiền: <?php total_cart_price()?> VNĐ</a>
+          <a class="nav-link" href="#">Tổng tiền: <?php echo total_cart_price()?> VNĐ</a>
         </li>
       </ul>
       <form class="d-flex" role="search" action="search_product.php" method="get">

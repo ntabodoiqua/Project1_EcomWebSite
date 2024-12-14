@@ -1,7 +1,7 @@
 <?php
 
 // include connect file
-include('./includes/connect.php');
+// include('./includes/connect.php');
 
 // get products
 function getproducts(){
@@ -10,7 +10,7 @@ function getproducts(){
     // check isset
     if(!isset($_GET['category'])){
         if(!isset($_GET['brand'])){
-    $select_query="select * from `products` order by rand() LIMIT 0,3";
+    $select_query="select * from `products` order by rand() LIMIT 0,9";
 $result_query=mysqli_query($con,$select_query);
 // $row=mysqli_fetch_assoc($result_query);
 // echo $row['product_title'];
@@ -318,7 +318,7 @@ function cart() {
             echo "<script>window.open('index.php', '_self')</script>";
         } else{
             $insert_query="insert into `cart_details` (product_id, ip_address, quantity)
-                            values ($get_product_id, '$ip', 0)";
+                            values ($get_product_id, '$ip', 1)";
             $result_query=mysqli_query($con,$insert_query);
             echo "<script>alert('Sản phẩm được thêm thành công vào giỏ!')</script>";
             echo "<script>window.open('index.php', '_self')</script>";
@@ -356,15 +356,16 @@ function total_cart_price(){
     $result=mysqli_query($con,$cart_query);
     while($row=mysqli_fetch_array($result)){
         $product_id=$row['product_id'];
+        $product_qty=$row['quantity'];
         $select_products="select * from `products` where product_id='$product_id'";
         $result_products=mysqli_query($con,$select_products);
         while($row_product_price=mysqli_fetch_array($result_products)){
             $product_price=array($row_product_price['product_price']);
             $product_values=array_sum($product_price);
-            $total+=$product_values;
+            $total+=$product_values*$product_qty;
         }
     }
-    echo number_format($total, 0, ',', '.');
+    return number_format($total, 0, ',', '.');
 }
 ?>
 

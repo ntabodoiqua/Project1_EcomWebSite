@@ -41,6 +41,30 @@
 #xemSanPham:active {
     background-color: #0097a7;  
 }
+/* Style for id 'checkout' */
+#checkOutButton {
+    display: inline-block;      
+    padding: 10px 20px;         
+    font-size: 16px;           
+    font-weight: bold;          
+    color: rgb(255, 255, 255);               
+    background-color: #00bd48; 
+    border: none;               
+    border-radius: 5px;         
+    text-decoration: none;      
+    cursor: pointer;            
+    transition: background-color 0.3s ease; 
+}
+
+/* effect when hovering */
+#checkOutButton:hover {
+    background-color: #008528;  
+}
+
+/* effect when pushing */ 
+#checkOutButton:active {
+    background-color: #006d24;  
+}
 .cart_img{
     width:85px;
     height: 85px;

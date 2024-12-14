@@ -1,14 +1,13 @@
 <!-- connect file -->
 <?php
-include('includes/connect.php');
-include('functions/common_functions.php');
+include('../includes/connect.php');
 ?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laptop chính hãng Thế Anh</title>
+    <title>Trang thanh toán</title>
 <!-- bootstrap CSS link -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
 rel="stylesheet" 
@@ -47,12 +46,6 @@ referrerpolicy="no-referrer" />
         <li class="nav-item">
           <a class="nav-link" href="#">Liên hệ chúng tôi</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping"></i><sup><?php cart_item();?></sup> Giỏ hàng </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Tổng tiền: <?php echo total_cart_price()?> VNĐ</a>
-        </li>
       </ul>
       <form class="d-flex" role="search" action="search_product.php" method="get">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
@@ -61,11 +54,6 @@ referrerpolicy="no-referrer" />
     </div>
   </div>
 </nav>
-
-<!-- call cart func -->
-<?php
-cart();
-?>
 
 <!-- second child -->
 <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
@@ -88,52 +76,24 @@ cart();
 
  <!-- fourth child -->
   <div class="row">
-  <div class="col-md-10">
+  <div class="col-md-12">
         <!-- products -->
         <div class="row">
-<!-- fetch products -->
- <?php
-get_all_products();
-get_chosen_categories();
-get_chosen_brands();
- ?>
-            
+            <?php
+            if(!isset($_SESSION['username'])){
+                include('user_login.php');
+            } else {
+                include('payment.php');
+            }
+            ?>
 <!-- row end -->
             
   </div>
 <!-- column end -->
-</div>
-    <div class="col-md-2 bg-secondary p-0">
-        <!-- brands to be displayed -->
-        <ul class="navbar-nav me-auto text-center">
-            <li class="nav-item bg-info">
-                <a href="#" class="nav-link text-light"><h4>Hãng sản xuất
-                </h4></a>
-            </li>
 
-            <?php
-            getbrands();
-            ?>
-            
-        </ul>
 
-        <!-- categories to be displayed -->
-        <ul class="navbar-nav me-auto text-center">
-            <li class="nav-item bg-info">
-                <a href="#" class="nav-link text-light"><h4>Danh mục sản phẩm
-                </h4></a>
-            </li>
-
-            <?php
-            getcategories();
-            ?>
-        </ul>
-    </div>
-    
-  </div>
-<!-- last child -->
 <?php
-include("./includes/footer.php");
+include("../includes/footer.php");
 ?>
      </div>
 

@@ -4,7 +4,7 @@ include('includes/connect.php');
 include('functions/common_functions.php');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,24 +81,28 @@ cart();
     <div class="row">
         <form action="" method="post">
         <table class="table table-bordered text-center">
-            <thead>
-                <tr>
-                    <th>Tên sản phẩm</th>
-                    <th>Ảnh sản phẩm</th>
-                    <th>Số lượng</th>
-                    <th>Tổng tiền</th>
-                    <th>Xóa</th>
-                    <th colspan="2">Thao tác</th>
-                </tr>
-            </thead>
-            <tbody>
                 <!-- display data for table-->
                  <?php
                  $ip = getIPAddress();
                  $total=0;
                  $cart_query="select * from `cart_details` where ip_address='$ip'";
                  $result=mysqli_query($con,$cart_query);
+                 $result_count=mysqli_num_rows($result);
+                 if($result_count>0){
+                  echo "<thead>
+                <tr>
+                    <th>Tên sản phẩm</th>
+                    <th>Ảnh sản phẩm</th>
+                    <td>SL hiện tại</th>
+                    <th>Sửa SL</th>
+                    <th>Giá</th>
+                    <th>Xóa</th>
+                    <th colspan='2'>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>";
                  while($row=mysqli_fetch_array($result)){
+                     $product_quantity=$row['quantity'];
                      $product_id=$row['product_id'];
                      $select_products="select * from `products` where product_id='$product_id'";
                      $result_products=mysqli_query($con,$select_products);
@@ -108,47 +112,96 @@ cart();
                          $product_title=$row_product_price['product_title'];
                          $product_image1=$row_product_price['product_image1'];
                          $product_values=array_sum($product_price);
-                         $total+=$product_values;
-                
+                    
+
                  ?>
                 <tr>
                     <td><?php echo $product_title ?></td>
                     <td><img src="./admin_area/product_images/<?php echo $product_image1 ?>" alt="" class="cart_img"></td>
-                    <td><input type="number" name="qty" class="form-input w-50"></td>
+                    <td><?php echo $product_quantity ?></td>
+                    <td> 
+                      <div>
+                      <input type="text" name="qty[<?php echo $product_id ?>]" class="form-input w-50"></td>
                     <?php
-                        $get_ip = getIPAddress();
-                        if(isset($_POST['update_cart'])){
-                            $quantities=$_POST['qty'];
-                            $update_cart="update `cart_details` set quantity = '$quantities' where 
-                            	ip_address = '$get_ip'";
-                              // lỗi
-                        $result_products_quantity=mysqli_query($con,$update_cart);
-                        $total=$total*(int)$quantities;
-                        }
+                        if (isset($_POST['cart_update'])) {
+                          foreach ($_POST['qty'] as $product_id => $quantity) {
+                              // check condition
+                              if (!empty($quantity) && $quantity > 0) {
+                                  $update_cart = "UPDATE `cart_details` SET quantity = $quantity 
+                                                  WHERE ip_address = '$ip' AND product_id = '$product_id'";
+                                  mysqli_query($con, $update_cart);
+                                  //reload to update currNumber
+                                  header("Location: cart.php");
+                                  exit();
+                              }
+                          }
+                          
+                      }
                     ?>
+                    </div>
                     <td><?php echo number_format($price_table, 0, ',', '.') ?>đ</td>
-                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox" name="removeitem[]" value="<?php echo $product_id?>"></td>
                     <td>
-                        <input type="submit" value="Cập nhật số lượng" class="bg-info px-3 py-2 border-0 mx-3" name="update_cart">
-                        <button class="bg-info px-3 py-2 border-0 mx-3">Xóa sản phẩm</button>
+                        <input type="submit" value="Cập nhật SL" class="bg-info px-3 py-2 border-0 mx-3" name="cart_update">
+                        <!-- <button class="bg-info px-3 py-2 border-0 mx-3">Xóa sản phẩm</button> -->
+                        <input type="submit" value="Xóa sản phẩm" class="bg-info px-3 py-2 border-0 mx-3" name="remove_cart">
                     </td>
                 </tr>
                 <?php
                  }
                 }
+              }
+              else {
+                echo "<h2 class='text-center text-danger'>Giỏ hàng trống</h2>";
+              }
                 ?>
             </tbody>
         </table>
         <!-- subtotal -->
-         <div class="d-flex mb-3"> 
-            <h4 class="px-3">Tổng tiền: <strong class="text-info"><?php echo number_format($total, 0, ',', '.') ?>đ</strong><h4>
-            <a href="index.php"><button class="bg-info px-3 py-2 border-0 mx-3">Tiếp tục mua sắm</button></a>
-            <a href="#"><button class="bg-secondary px-3 py-2 border-0 text-light">Thanh toán</button></a>
+         <?php
+         $ip = getIPAddress();
+         $cart_query="select * from `cart_details` where ip_address='$ip'";
+         $result=mysqli_query($con,$cart_query);
+         $result_count=mysqli_num_rows($result);
+         $num=total_cart_price();
+         if($result_count>0){
+          echo "<div class='d-flex mb-3'> 
+            <h4 class='px-3'>Tổng tiền: <strong class='text-info'>$num đ</strong><h4>
+            <input type='submit' value='Tiếp tục mua sắm' id='xemSanPham' name='continue_shopping'>
+            <input type='submit' value='Thanh toán hóa đơn' id='checkOutButton' name='check_out'>";
+         }
+         else{
+          echo "<input type='submit' value='Tiếp tục mua sắm' id='xemSanPham' name='continue_shopping'>";
+         }
+         if(isset($_POST['continue_shopping'])){
+            echo "<script>window.open('index.php','_self')</script>";
+         }
+         if(isset($_POST['check_out'])){
+            echo "<script>window.open('./user_area/check_out.php','_self')</script>";
+         }
+         ?>
+         
          </div>
     </div>
  </div>
 </form>            
-
+<!-- funct to remove item -->
+<?php
+function remove_cart_item(){
+  global $con;
+  if(isset($_POST['remove_cart'])){
+    foreach($_POST['removeitem'] as $remove_id){
+      echo $remove_id;
+      $delete_query="delete from `cart_details` where product_id=$remove_id";
+      $run_delete=mysqli_query($con,$delete_query);
+      if($run_delete){
+        echo "<script>window.open('cart.php','_self')</script>";
+      }
+    }
+  }
+}
+echo $remove_item=remove_cart_item();
+?>
 <!-- last child -->
 <?php
 include("./includes/footer.php");
