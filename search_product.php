@@ -54,7 +54,7 @@ referrerpolicy="no-referrer" />
           <a class="nav-link" href="#">Tổng tiền: 100/-</a>
         </li>
       </ul>
-      <form class="d-flex" role="search" action="search_product.php" method="get">
+      <form class="d-flex" role="search" action="" method="get">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
          <input type="submit" value="Tìm kiếm" class="btn btn-outline" name="search_data_product">
       </form>
@@ -88,7 +88,7 @@ referrerpolicy="no-referrer" />
         <div class="row">
 <!-- fetch products -->
  <?php
-getproducts();
+search_products();
 get_chosen_categories();
 get_chosen_brands();
  ?>
