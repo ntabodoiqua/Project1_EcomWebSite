@@ -19,7 +19,8 @@ while($row=mysqli_fetch_assoc($result_query)){
   $product_title=$row['product_title'];
   $product_description=$row['product_description'];
   $product_image1=$row['product_image1'];
-  $product_price=$row['product_price'];
+  $temp_price=$row['product_price'];
+  $product_price = number_format($temp_price, 0, ',', '.');
   $category_id=$row['category_id'];
   $brand_id=$row['brand_id'];
   echo "<div class='col-md-4 mb-2'>
@@ -27,7 +28,8 @@ while($row=mysqli_fetch_assoc($result_query)){
     <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
     <div class='card-body'>
       <h5 class='card-title'>$product_title</h5>
-      <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p class='card-text'>$product_description</p>
+      <p class='card-text'>Giá sản phẩm: $product_price VNĐ</p>
       <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Thêm vào giỏ hàng</a>
       <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Xem thêm</a>
     </div>
@@ -54,7 +56,8 @@ while($row=mysqli_fetch_assoc($result_query)){
   $product_title=$row['product_title'];
   $product_description=$row['product_description'];
   $product_image1=$row['product_image1'];
-  $product_price=$row['product_price'];
+  $temp_price=$row['product_price'];
+  $product_price = number_format($temp_price, 0, ',', '.');
   $category_id=$row['category_id'];
   $brand_id=$row['brand_id'];
   echo "<div class='col-md-4 mb-2'>
@@ -62,7 +65,8 @@ while($row=mysqli_fetch_assoc($result_query)){
     <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
     <div class='card-body'>
       <h5 class='card-title'>$product_title</h5>
-      <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p class='card-text'>$product_description</p>
+      <p class='card-text'>Giá sản phẩm: $product_price VNĐ</p>
       <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Thêm vào giỏ hàng</a>
       <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Xem thêm</a>
     </div>
@@ -93,7 +97,8 @@ while($row=mysqli_fetch_assoc($result_query)){
   $product_title=$row['product_title'];
   $product_description=$row['product_description'];
   $product_image1=$row['product_image1'];
-  $product_price=$row['product_price'];
+  $temp_price=$row['product_price'];
+  $product_price = number_format($temp_price, 0, ',', '.');
   $category_id=$row['category_id'];
   $brand_id=$row['brand_id'];
   echo "<div class='col-md-4 mb-2'>
@@ -101,7 +106,8 @@ while($row=mysqli_fetch_assoc($result_query)){
     <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
     <div class='card-body'>
       <h5 class='card-title'>$product_title</h5>
-      <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p class='card-text'>$product_description</p>
+      <p class='card-text'>Giá sản phẩm: $product_price VNĐ</p>
       <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Thêm vào giỏ hàng</a>
       <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Xem thêm</a>
     </div>
@@ -132,7 +138,8 @@ while($row=mysqli_fetch_assoc($result_query)){
   $product_title=$row['product_title'];
   $product_description=$row['product_description'];
   $product_image1=$row['product_image1'];
-  $product_price=$row['product_price'];
+  $temp_price=$row['product_price'];
+  $product_price = number_format($temp_price, 0, ',', '.');
   $category_id=$row['category_id'];
   $brand_id=$row['brand_id'];
   echo "<div class='col-md-4 mb-2'>
@@ -140,7 +147,8 @@ while($row=mysqli_fetch_assoc($result_query)){
     <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
     <div class='card-body'>
       <h5 class='card-title'>$product_title</h5>
-      <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p class='card-text'>$product_description</p>
+      <p class='card-text'>Giá sản phẩm: $product_price VNĐ</p>
       <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Thêm vào giỏ hàng</a>
       <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Xem thêm</a>
     </div>
@@ -198,7 +206,8 @@ while($row=mysqli_fetch_assoc($result_query)){
   $product_title=$row['product_title'];
   $product_description=$row['product_description'];
   $product_image1=$row['product_image1'];
-  $product_price=$row['product_price'];
+  $temp_price=$row['product_price'];
+  $product_price = number_format($temp_price, 0, ',', '.');
   $category_id=$row['category_id'];
   $brand_id=$row['brand_id'];
   echo "<div class='col-md-4 mb-2'>
@@ -206,7 +215,8 @@ while($row=mysqli_fetch_assoc($result_query)){
     <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
     <div class='card-body'>
       <h5 class='card-title'>$product_title</h5>
-      <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p class='card-text'>$product_description</p>
+      <p class='card-text'>Giá sản phẩm: $product_price VNĐ</p>
       <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Thêm vào giỏ hàng</a>
       <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Xem thêm</a>
     </div>
@@ -234,7 +244,8 @@ while($row=mysqli_fetch_assoc($result_query)){
   $product_image1=$row['product_image1'];
   $product_image2=$row['product_image2'];
   $product_image3=$row['product_image3'];
-  $product_price=$row['product_price'];
+  $temp_price=$row['product_price'];
+  $product_price = number_format($temp_price, 0, ',', '.');
   $category_id=$row['category_id'];
   $brand_id=$row['brand_id'];
   $product_link=$row['product_link'];
@@ -243,9 +254,10 @@ while($row=mysqli_fetch_assoc($result_query)){
     <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
     <div class='card-body'>
       <h5 class='card-title'>$product_title</h5>
-      <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p class='card-text'>$product_description</p>
+      <p class='card-text'>Giá sản phẩm: $product_price VNĐ</p>
       <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Thêm vào giỏ hàng</a>
-      <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Xem thêm</a>
+      <a href='index.php' class='btn btn-secondary'>Trang chủ</a>
     </div>
   </div>
 </div>
@@ -302,16 +314,57 @@ function cart() {
         $result_query=mysqli_query($con,$select_query);
         $num_rows=mysqli_num_rows($result_query);
         if ($num_rows>0){
-            echo "<script>alert('Mặt hàng đã tồn tại trong giỏ hàng')</script>";
+            echo "<script>alert('Mặt hàng đã tồn tại trong giỏ hàng!')</script>";
             echo "<script>window.open('index.php', '_self')</script>";
         } else{
             $insert_query="insert into `cart_details` (product_id, ip_address, quantity)
                             values ($get_product_id, '$ip', 0)";
             $result_query=mysqli_query($con,$insert_query);
+            echo "<script>alert('Sản phẩm được thêm thành công vào giỏ!')</script>";
             echo "<script>window.open('index.php', '_self')</script>";
         }
         
     }
+}
+
+
+// function to get cart item numbers
+function cart_item(){
+    if(isset($_GET['add_to_cart'])){
+        global $con;
+        $ip = getIPAddress();
+        $select_query="select * from `cart_details` where ip_address='$ip'";
+        $result_query=mysqli_query($con,$select_query);
+        $count_cart_items=mysqli_num_rows($result_query);
+        } else{
+        global $con;
+        $ip = getIPAddress();
+        $select_query="select * from `cart_details` where ip_address='$ip'";
+        $result_query=mysqli_query($con,$select_query);
+        $count_cart_items=mysqli_num_rows($result_query);
+        }
+    echo $count_cart_items;
+    }
+
+
+
+function total_cart_price(){
+    global $con;
+    $ip = getIPAddress();
+    $total=0;
+    $cart_query="select * from `cart_details` where ip_address='$ip'";
+    $result=mysqli_query($con,$cart_query);
+    while($row=mysqli_fetch_array($result)){
+        $product_id=$row['product_id'];
+        $select_products="select * from `products` where product_id='$product_id'";
+        $result_products=mysqli_query($con,$select_products);
+        while($row_product_price=mysqli_fetch_array($result_products)){
+            $product_price=array($row_product_price['product_price']);
+            $product_values=array_sum($product_price);
+            $total+=$product_values;
+        }
+    }
+    echo number_format($total, 0, ',', '.');
 }
 ?>
 

@@ -8,7 +8,7 @@ include('functions/common_functions.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecomerce Website using PHP and mySQL</title>
+    <title>Laptop chính hãng Thế Anh</title>
 <!-- bootstrap CSS link -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
 rel="stylesheet" 
@@ -48,10 +48,10 @@ referrerpolicy="no-referrer" />
           <a class="nav-link" href="#">Liên hệ chúng tôi</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup>1</sup> Giỏ hàng </a>
+          <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping"></i><sup><?php cart_item();?></sup> Giỏ hàng </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Tổng tiền: 100/-</a>
+          <a class="nav-link" href="#">Tổng tiền: <?php total_cart_price()?> VNĐ</a>
         </li>
       </ul>
       <form class="d-flex" role="search" action="" method="get">
@@ -61,6 +61,11 @@ referrerpolicy="no-referrer" />
     </div>
   </div>
 </nav>
+
+<!-- call cart func -->
+<?php
+cart();
+?>
 
 <!-- second child -->
 <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
