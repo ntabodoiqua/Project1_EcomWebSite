@@ -61,10 +61,7 @@ referrerpolicy="no-referrer" />
     </div>
   </div>
 </nav>
-<!-- call cart func -->
-<?php
-cart();
-?>
+
 <!-- second child -->
 <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
     <ul class="navbar-nav me-auto">
@@ -91,13 +88,10 @@ cart();
         <div class="row">
 <!-- fetch products -->
  <?php
-getproducts();
+ view_details();
 get_chosen_categories();
 get_chosen_brands();
-// $ip = getIPAddress();  
-// echo 'User Real IP Address - '.$ip;
  ?>
-            
 <!-- row end -->
             
   </div>

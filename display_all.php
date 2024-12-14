@@ -61,10 +61,7 @@ referrerpolicy="no-referrer" />
     </div>
   </div>
 </nav>
-<!-- call cart func -->
-<?php
-cart();
-?>
+
 <!-- second child -->
 <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
     <ul class="navbar-nav me-auto">
@@ -91,11 +88,9 @@ cart();
         <div class="row">
 <!-- fetch products -->
  <?php
-getproducts();
+get_all_products();
 get_chosen_categories();
 get_chosen_brands();
-// $ip = getIPAddress();  
-// echo 'User Real IP Address - '.$ip;
  ?>
             
 <!-- row end -->
@@ -131,8 +126,6 @@ get_chosen_brands();
     </div>
     
   </div>
-  <!-- fifth child -->
-    <a href="display_all.php" id="xemSanPham">Bấm vào đây để xem toàn bộ sản phẩm hoặc chọn tab Sản phẩm ở trên</a>
 <!-- last child -->
 <?php
 include("./includes/footer.php");
