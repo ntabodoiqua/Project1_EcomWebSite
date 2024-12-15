@@ -2,6 +2,7 @@
 <?php
 include('includes/connect.php');
 include('functions/common_functions.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -41,17 +42,27 @@ referrerpolicy="no-referrer" />
         <li class="nav-item">
           <a class="nav-link" href="display_all.php">Sản phẩm</a>
         </li>
+        <?php
+        if(!isset($_SESSION['username'])){
+          echo
+        "<li class='nav-item'>
+        <a class='nav-link' href='./user_area/user_registration.php'>Đăng ký</a>
+        </li>";
+        } else {
+          echo
+          "<li class='nav-item'>
+          <a class='nav-link' href='./user_area/profile.php'>Tài khoản của tôi</a>
+        </li>";
+        }
+        ?>
         <li class="nav-item">
-          <a class="nav-link" href="./user_area/user_registration.php">Đăng ký</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Liên hệ chúng tôi</a>
+          <a class="nav-link" href="contact_us.php">Liên hệ chúng tôi</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping"></i><sup><?php cart_item();?></sup> Giỏ hàng </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Tổng tiền: <?php echo total_cart_price()?> VNĐ</a>
+          <a class="nav-link" href="cart.php">Tổng cần thanh toán: <?php echo total_cart_price()?> VNĐ</a>
         </li>
       </ul>
       <form class="d-flex" role="search" action="search_product.php" method="get">
@@ -66,14 +77,28 @@ referrerpolicy="no-referrer" />
 cart();
 ?>
 <!-- second child -->
-<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
     <ul class="navbar-nav me-auto">
-    <li class="nav-item">
-          <a class="nav-link" href="#">Welcome Guest!</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./user_area/user_login.php">Đăng nhập</a>
-        </li>
+        <?php
+        if(!isset($_SESSION['username'])){
+          echo "<li class='nav-item'>
+          <a class='nav-link' href='#'>Welcome Guest!</a>
+        </li>";
+        } else {
+          echo "<li class='nav-item'>
+          <a class='nav-link' href='#'>Welcome ".$_SESSION['username']."!</a>
+        </li>";
+        }
+        if(!isset($_SESSION['username'])){
+          echo "<li class='nav-item'>
+          <a class='nav-link' href='./user_area/user_login.php'>Đăng nhập</a>
+        </li>";
+        } else {
+          echo "<li class='nav-item'>
+          <a class='nav-link' href='./user_area/user_logout.php'>Đăng xuất</a>
+        </li>";
+        }
+        ?>
     </ul>
 </nav>
 

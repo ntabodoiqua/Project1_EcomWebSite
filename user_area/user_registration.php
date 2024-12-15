@@ -76,6 +76,7 @@ if(isset($_POST['user_register'])){
     $user_avatar=$_FILES['user_avatar']['name'];
     $user_avatar_temp=$_FILES['user_avatar']['tmp_name'];
     $user_password=$_POST['user_password'];
+    $hash_password=password_hash($user_password, PASSWORD_DEFAULT);
     $conf_user_password=$_POST['conf_user_password'];
     $user_address=$_POST['user_address'];
     $user_phone=$_POST['user_phone'];
@@ -94,10 +95,12 @@ if(isset($_POST['user_register'])){
         // insert query
     move_uploaded_file($user_avatar_temp, "./user_images/$user_avatar");
     $insert_query="insert into `user_table` (username, user_email, user_password, user_image, user_ip, user_address, user_phone)
-    values ('$user_username', '$user_email', '$user_password', '$user_avatar', '$user_ip', '$user_address', '$user_phone')";
+    values ('$user_username', '$user_email', '$hash_password', '$user_avatar', '$user_ip', '$user_address', '$user_phone')";
     $sql_exec=mysqli_query($con,$insert_query);
     if($sql_exec){
-        echo "<script>alert('Thêm dữ liệu thành công')</script>";
+        echo "<script>alert('Đăng ký thành công! Hãy đăng nhập để sử dụng')</script>
+        <script>window.open('user_login.php','_self')</script>";
+       
     }else{
         die(mysqli_error($con));
     }
@@ -105,6 +108,16 @@ if(isset($_POST['user_register'])){
     
 }
 
-
+// select cart items
+// $select_cart_item="select * from `cart_details` where ip_address = '$user_ip'";
+// $result_cart=mysqli_query($con,$select_cart_item);
+// $rows_count2=mysqli_num_rows($result_cart);
+// if ($rows_count2>0) {
+//     $_SESSION['username']=$user_username;
+//     echo "<script>alert('Bạn có hàng trong giỏ')</script>";
+//     echo "<script>window.open('check_out.php','_self')</script>";
+// } else {
+//     echo "<script>window.open('../index.php','_self')</script>";
+// }
 
 ?>

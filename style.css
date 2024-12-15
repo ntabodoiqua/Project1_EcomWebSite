@@ -70,3 +70,16 @@
     height: 85px;
     object-fit: contain;
 }
+.profile_image{
+    width:100%;
+    object-fit: contain;
+    margin:auto;
+    display:block;
+    height:100%;
+}
+.image_container {
+    width: 150px; 
+    height: 150px;
+    overflow: hidden; 
+    margin: auto; 
+}

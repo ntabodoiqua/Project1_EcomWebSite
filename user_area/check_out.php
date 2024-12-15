@@ -1,6 +1,7 @@
 <!-- connect file -->
 <?php
 include('../includes/connect.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -20,7 +21,7 @@ crossorigin="anonymous"
 referrerpolicy="no-referrer" />
 
 <!-- css file -->
- <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <!-- navbar -->
@@ -28,23 +29,23 @@ referrerpolicy="no-referrer" />
         <!-- first child -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <img src="./images/logo.png" alt="" class="logo">
+    <img src="../images/logo.png" alt="" class="logo" id="logo_style">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Trang chủ</a>
+          <a class="nav-link active" aria-current="page" href="../index.php">Trang chủ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="display_all.php">Sản phẩm</a>
+          <a class="nav-link" href="../display_all.php">Sản phẩm</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Đăng ký</a>
+          <a class="nav-link" href="user_registration.php">Đăng ký</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Liên hệ chúng tôi</a>
+          <a class="nav-link" href="../contact_us.php">Liên hệ chúng tôi</a>
         </li>
       </ul>
       <form class="d-flex" role="search" action="search_product.php" method="get">
@@ -58,12 +59,27 @@ referrerpolicy="no-referrer" />
 <!-- second child -->
 <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
     <ul class="navbar-nav me-auto">
-    <li class="nav-item">
-          <a class="nav-link" href="#">Welcome Guest!</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Đăng nhập</a>
-        </li>
+        <?php
+        if(!isset($_SESSION['username'])){
+          echo "<li class='nav-item'>
+          <a class='nav-link' href='#'>Welcome Guest!</a>
+        </li>";
+        } else {
+          echo "<li class='nav-item'>
+          <a class='nav-link' href='#'>Welcome ".$_SESSION['username']."!</a>
+        </li>";
+        }
+        if(!isset($_SESSION['username'])){
+          echo "<li class='nav-item'>
+          <a class='nav-link' href='./user_area/user_login.php'>Đăng nhập</a>
+        </li>";
+        } else {
+          echo "<li class='nav-item'>
+          <a class='nav-link' href='./user_area/user_logout.php'>Đăng xuất</a>
+        </li>";
+        }
+        ?>
+        
     </ul>
 </nav>
 
