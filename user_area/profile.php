@@ -9,7 +9,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laptop chính hãng Thế Anh</title>
+    <title>Trang cá nhân</title>
 <!-- bootstrap CSS link -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
 rel="stylesheet" 
@@ -133,8 +133,15 @@ cart();
         </li>
         </ul>
   </div>
-  <div class="col-md-10">
-    <?php get_user_order_details();?>
+  <div class="col-md-10 text-center">
+    <?php get_user_order_details();
+    if (isset(($_GET['edit_account']))){
+      include('edit_account.php');
+    }
+    if (isset(($_GET['my_orders']))){
+      include('user_orders.php');
+    }
+    ?>
   </div>
  </div>
 
