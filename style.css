@@ -83,3 +83,7 @@
     overflow: hidden; 
     margin: auto; 
 }
+.product_img{
+    width:100px;
+    object-fit: contain;
+}

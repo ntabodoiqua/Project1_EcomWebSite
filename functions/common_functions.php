@@ -23,6 +23,9 @@ while($row=mysqli_fetch_assoc($result_query)){
   $product_price = number_format($temp_price, 0, ',', '.');
   $category_id=$row['category_id'];
   $brand_id=$row['brand_id'];
+  $product_link=$row['product_link'];
+  $number_available=$row['number_available'] - $row['number_sold'];
+  if ($number_available>0) {
   echo "<div class='col-md-4 mb-2'>
   <div class='card' >
     <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
@@ -30,11 +33,26 @@ while($row=mysqli_fetch_assoc($result_query)){
       <h5 class='card-title'>$product_title</h5>
       <p class='card-text'>$product_description</p>
       <p class='card-text'>Giá sản phẩm: $product_price VNĐ</p>
+      <p class='card-text'>Còn trong kho: $number_available sản phẩm</p>
       <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Thêm vào giỏ hàng</a>
       <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Xem thêm</a>
     </div>
   </div>
 </div>";
+  } else {
+    echo "<div class='col-md-4 mb-2'>
+  <div class='card' >
+    <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
+    <div class='card-body'>
+      <h5 class='card-title'>$product_title</h5>
+      <p class='card-text'>$product_description</p>
+      <p class='card-text'>Giá sản phẩm: $product_price VNĐ</p>
+      <p class='card-text'>Còn trong kho: $number_available sản phẩm</p>
+      <a href='$product_link' class='btn btn-secondary'>Đã hết hàng. Nhấp vào đây để đến trang NSX</a>
+    </div>
+  </div>
+</div>";
+  }
 }
 }
 }
@@ -60,18 +78,36 @@ while($row=mysqli_fetch_assoc($result_query)){
   $product_price = number_format($temp_price, 0, ',', '.');
   $category_id=$row['category_id'];
   $brand_id=$row['brand_id'];
-  echo "<div class='col-md-4 mb-2'>
-  <div class='card' >
-    <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
-    <div class='card-body'>
-      <h5 class='card-title'>$product_title</h5>
-      <p class='card-text'>$product_description</p>
-      <p class='card-text'>Giá sản phẩm: $product_price VNĐ</p>
-      <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Thêm vào giỏ hàng</a>
-      <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Xem thêm</a>
+  $product_link=$row['product_link'];
+  $number_available=$row['number_available'] - $row['number_sold'];
+  if ($number_available>0) {
+    echo "<div class='col-md-4 mb-2'>
+    <div class='card' >
+      <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
+      <div class='card-body'>
+        <h5 class='card-title'>$product_title</h5>
+        <p class='card-text'>$product_description</p>
+        <p class='card-text'>Giá sản phẩm: $product_price VNĐ</p>
+        <p class='card-text'>Còn trong kho: $number_available sản phẩm</p>
+        <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Thêm vào giỏ hàng</a>
+        <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Xem thêm</a>
+      </div>
     </div>
-  </div>
-</div>";
+  </div>";
+    } else {
+      echo "<div class='col-md-4 mb-2'>
+    <div class='card' >
+      <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
+      <div class='card-body'>
+        <h5 class='card-title'>$product_title</h5>
+        <p class='card-text'>$product_description</p>
+        <p class='card-text'>Giá sản phẩm: $product_price VNĐ</p>
+        <p class='card-text'>Còn trong kho: $number_available sản phẩm</p>
+        <a href='$product_link' class='btn btn-secondary'>Đã hết hàng. Nhấp vào đây để đến trang NSX</a>
+      </div>
+    </div>
+  </div>";
+    }
 }
 }
 }
@@ -101,18 +137,36 @@ while($row=mysqli_fetch_assoc($result_query)){
   $product_price = number_format($temp_price, 0, ',', '.');
   $category_id=$row['category_id'];
   $brand_id=$row['brand_id'];
-  echo "<div class='col-md-4 mb-2'>
-  <div class='card' >
-    <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
-    <div class='card-body'>
-      <h5 class='card-title'>$product_title</h5>
-      <p class='card-text'>$product_description</p>
-      <p class='card-text'>Giá sản phẩm: $product_price VNĐ</p>
-      <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Thêm vào giỏ hàng</a>
-      <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Xem thêm</a>
+  $product_link=$row['product_link'];
+  $number_available=$row['number_available'] - $row['number_sold'];
+  if ($number_available>0) {
+    echo "<div class='col-md-4 mb-2'>
+    <div class='card' >
+      <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
+      <div class='card-body'>
+        <h5 class='card-title'>$product_title</h5>
+        <p class='card-text'>$product_description</p>
+        <p class='card-text'>Giá sản phẩm: $product_price VNĐ</p>
+        <p class='card-text'>Còn trong kho: $number_available sản phẩm</p>
+        <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Thêm vào giỏ hàng</a>
+        <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Xem thêm</a>
+      </div>
     </div>
-  </div>
-</div>";
+  </div>";
+    } else {
+      echo "<div class='col-md-4 mb-2'>
+    <div class='card' >
+      <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
+      <div class='card-body'>
+        <h5 class='card-title'>$product_title</h5>
+        <p class='card-text'>$product_description</p>
+        <p class='card-text'>Giá sản phẩm: $product_price VNĐ</p>
+        <p class='card-text'>Còn trong kho: $number_available sản phẩm</p>
+        <a href='$product_link' class='btn btn-secondary'>Đã hết hàng. Nhấp vào đây để đến trang NSX</a>
+      </div>
+    </div>
+  </div>";
+    }
 }
 }
 }
@@ -142,18 +196,36 @@ while($row=mysqli_fetch_assoc($result_query)){
   $product_price = number_format($temp_price, 0, ',', '.');
   $category_id=$row['category_id'];
   $brand_id=$row['brand_id'];
-  echo "<div class='col-md-4 mb-2'>
-  <div class='card' >
-    <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
-    <div class='card-body'>
-      <h5 class='card-title'>$product_title</h5>
-      <p class='card-text'>$product_description</p>
-      <p class='card-text'>Giá sản phẩm: $product_price VNĐ</p>
-      <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Thêm vào giỏ hàng</a>
-      <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Xem thêm</a>
+  $product_link=$row['product_link'];
+  $number_available=$row['number_available'] - $row['number_sold'];
+  if ($number_available>0) {
+    echo "<div class='col-md-4 mb-2'>
+    <div class='card' >
+      <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
+      <div class='card-body'>
+        <h5 class='card-title'>$product_title</h5>
+        <p class='card-text'>$product_description</p>
+        <p class='card-text'>Giá sản phẩm: $product_price VNĐ</p>
+        <p class='card-text'>Còn trong kho: $number_available sản phẩm</p>
+        <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Thêm vào giỏ hàng</a>
+        <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Xem thêm</a>
+      </div>
     </div>
-  </div>
-</div>";
+  </div>";
+    } else {
+      echo "<div class='col-md-4 mb-2'>
+    <div class='card' >
+      <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
+      <div class='card-body'>
+        <h5 class='card-title'>$product_title</h5>
+        <p class='card-text'>$product_description</p>
+        <p class='card-text'>Giá sản phẩm: $product_price VNĐ</p>
+        <p class='card-text'>Còn trong kho: $number_available sản phẩm</p>
+        <a href='$product_link' class='btn btn-secondary'>Đã hết hàng. Nhấp vào đây để đến trang NSX</a>
+      </div>
+    </div>
+  </div>";
+    }
 }
 }
 }
@@ -210,18 +282,36 @@ while($row=mysqli_fetch_assoc($result_query)){
   $product_price = number_format($temp_price, 0, ',', '.');
   $category_id=$row['category_id'];
   $brand_id=$row['brand_id'];
-  echo "<div class='col-md-4 mb-2'>
-  <div class='card' >
-    <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
-    <div class='card-body'>
-      <h5 class='card-title'>$product_title</h5>
-      <p class='card-text'>$product_description</p>
-      <p class='card-text'>Giá sản phẩm: $product_price VNĐ</p>
-      <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Thêm vào giỏ hàng</a>
-      <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Xem thêm</a>
+  $product_link=$row['product_link'];
+  $number_available=$row['number_available'] - $row['number_sold'];
+  if ($number_available>0) {
+    echo "<div class='col-md-4 mb-2'>
+    <div class='card' >
+      <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
+      <div class='card-body'>
+        <h5 class='card-title'>$product_title</h5>
+        <p class='card-text'>$product_description</p>
+        <p class='card-text'>Giá sản phẩm: $product_price VNĐ</p>
+        <p class='card-text'>Còn trong kho: $number_available sản phẩm</p>
+        <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Thêm vào giỏ hàng</a>
+        <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>Xem thêm</a>
+      </div>
     </div>
-  </div>
-</div>";
+  </div>";
+    } else {
+      echo "<div class='col-md-4 mb-2'>
+    <div class='card' >
+      <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
+      <div class='card-body'>
+        <h5 class='card-title'>$product_title</h5>
+        <p class='card-text'>$product_description</p>
+        <p class='card-text'>Giá sản phẩm: $product_price VNĐ</p>
+        <p class='card-text'>Còn trong kho: $number_available sản phẩm</p>
+        <a href='$product_link' class='btn btn-secondary'>Đã hết hàng. Nhấp vào đây để đến trang NSX</a>
+      </div>
+    </div>
+  </div>";
+    }
 }
 }
 }
@@ -249,6 +339,7 @@ while($row=mysqli_fetch_assoc($result_query)){
   $category_id=$row['category_id'];
   $brand_id=$row['brand_id'];
   $product_link=$row['product_link'];
+  $number_available=$row['number_available'] - $row['number_sold'];
   echo "<div class='col-md-4 mb-2'>
   <div class='card' >
     <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='$product_title'>
@@ -256,6 +347,7 @@ while($row=mysqli_fetch_assoc($result_query)){
       <h5 class='card-title'>$product_title</h5>
       <p class='card-text'>$product_description</p>
       <p class='card-text'>Giá sản phẩm: $product_price VNĐ</p>
+      <p class='card-text'>Còn trong kho: $number_available sản phẩm</p>
       <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Thêm vào giỏ hàng</a>
       <a href='index.php' class='btn btn-secondary'>Trang chủ</a>
     </div>
@@ -405,10 +497,10 @@ function get_user_order_details() {
           $row_count=mysqli_num_rows($result_orders_query);
           if($row_count>0){
             echo "<h3 class='text-center text-success mt-5 mb-2'>Bạn có <span class='text-danger'>$row_count
-            </span> đơn hàng đang chờ thanh toán.</h3>
+            </span> đơn hàng đang chờ xác nhận.</h3>
             <p class='text-center'><a href='profile.php?my_orders' class='text-dark'>Chi tiết đơn hàng</a></p>";
           } else {
-            echo "<h3 class='text-center text-success mt-5 mb-2'>Bạn không có đơn hàng đang chờ thanh toán.</h3>
+            echo "<h3 class='text-center text-success mt-5 mb-2'>Bạn không có đơn hàng đang chờ xác nhận.</h3>
             <p class='text-center'><a href='../index.php' class='text-dark'>Tới trang chủ</a></p>";
           }
         }

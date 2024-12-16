@@ -1,3 +1,7 @@
+<?php
+include('../includes/connect.php');
+include('../functions/common_functions.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,7 +54,7 @@ referrerpolicy="no-referrer" />
                 </div>
                 <div class="button text-center">
                     <button class="my-3"><a href="insert_product.php" class="nav-link text-light bg-info my-1">Thêm sản phẩm</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">Xem sản phẩm</a></button>
+                    <button><a href="index.php?view_products" class="nav-link text-light bg-info my-1">Xem sản phẩm</a></button>
                     <button><a href="index.php?insert_categories" class="nav-link text-light bg-info my-1">Thêm danh mục</a></button>
                     <button><a href="" class="nav-link text-light bg-info my-1">Xem danh mục</a></button>
                     <button><a href="index.php?insert_brands" class="nav-link text-light bg-info my-1">Thêm hãng</a></button>
@@ -74,15 +78,24 @@ referrerpolicy="no-referrer" />
     if(isset($_GET['insert_brands'])) {
         include('insert_brands.php');
     }
+    if(isset($_GET['view_products'])) {
+        include('view_products.php');
+    }
+    if(isset($_GET['edit_products'])) {
+        include('edit_products.php');
+    }
+    if(isset($_GET['delete_products'])) {
+        include('delete_products.php');
+    }
     ?>
 </div>
 
 
 
      <!-- last child -->
- <div class="bg-info p-2 text-center">
-    <p>All Rights Reserved (©) Designed by NTA - 2024 - SOICT</p>
- </div>
+     <?php
+        include("../includes/footer.php");
+        ?>
      </div>
 <!-- bootstrap js link -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 

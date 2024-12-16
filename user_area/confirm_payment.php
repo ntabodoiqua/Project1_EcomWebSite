@@ -16,6 +16,11 @@ if (isset($_POST['confirm_payment'])){
     $insert_query="insert into `user_confirm` (order_id, invoice_number, date, 	deli_address)
                     values ($order_id, $invoice_number, NOW(), '$deli_address')";
     $result=mysqli_query($con,$insert_query);
+    $update_query="UPDATE `products`
+                    inner join `products_sold` on products.product_id = products_sold.product_id
+                    SET products.number_sold = products_sold.number_sold
+                    where not products.number_sold = products_sold.number_sold";
+    $exect_update=mysqli_query($con, $update_query);
     if($result){
         echo "<script><h3 class='text-center text-light'>Xác nhận thành công!</h3></script>";
         echo "<script>window.open('profile.php?my_orders','_self')</script>";

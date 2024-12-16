@@ -136,6 +136,7 @@ cart();
                          $price_table=$row_product_price['product_price'];
                          $product_title=$row_product_price['product_title'];
                          $product_image1=$row_product_price['product_image1'];
+                         $product_num=$row_product_price['number_available'] - $row_product_price['number_sold'];
                          $product_values=array_sum($product_price);
                     
 
@@ -151,13 +152,16 @@ cart();
                         if (isset($_POST['cart_update'])) {
                           foreach ($_POST['qty'] as $product_id => $quantity) {
                               // check condition
-                              if (!empty($quantity) && $quantity > 0) {
+                              if (!empty($quantity) && $quantity > 0 && $quantity <= $product_num) {
                                   $update_cart = "UPDATE `cart_details` SET quantity = $quantity 
                                                   WHERE ip_address = '$ip' AND product_id = '$product_id'";
                                   mysqli_query($con, $update_cart);
                                   //reload to update currNumber
                                   header("Location: cart.php");
                                   exit();
+                              }
+                              else {
+                                echo "<script>alert('Số lượng không hợp lệ hoặc nhiều hơn số hàng trong kho')</script>";
                               }
                           }
                           

@@ -11,12 +11,21 @@ $invoice_number=mt_rand();
 $status='pending';
 $cart_query_numpro="select * from `cart_details` where ip_address='$ip'";
 $result_numpro=mysqli_query($con, $cart_query_numpro);
+
 $sql_sum = "SELECT SUM(quantity) AS total_quantity FROM `cart_details` WHERE ip_address='$ip'";
 $res_sql = mysqli_query($con, $sql_sum);
 $row = mysqli_fetch_assoc($res_sql);
 $count_products = $row['total_quantity'];
+
 while($row_price=mysqli_fetch_array($result_numpro)){
     $product_id=$row_price['product_id'];
+    $number_sold=$row_price['quantity'];
+    
+    $insert_temp_num="INSERT INTO `products_sold` (product_id, number_sold)
+        VALUES ($product_id, $number_sold)
+        ON DUPLICATE KEY UPDATE 
+            number_sold = number_sold + VALUES(number_sold)";
+    $exec_query=mysqli_query($con, $insert_temp_num);
 }
 // get quantity from cart
 $get_cart="select * from `cart_details`";

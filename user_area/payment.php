@@ -32,7 +32,7 @@ crossorigin="anonymous">
             <div class="col-md-6 text-center">
                 <h5 class="text-primary mb-3">Chuyển khoản ngân hàng</h5>
                 <img src="../images/QR_code.jpg" alt="QR Code" class="img-fluid rounded shadow-sm" style="max-width: 250px;">
-                <p class="mt-3 text-muted">Quét mã QR để thực hiện thanh toán nhanh chóng và an toàn. Chúng tôi sẽ xác nhận thanh toán và gửi tới SĐT - email của bạn.</p>
+                <p class="mt-3 text-muted">Chức năng này hiện chưa hoàn thiện. Tuy nhiên bạn có thể donate tại đây.</p>
             </div>
             <!-- Cột 2: Thanh toán khi nhận hàng -->
             <div class="col-md-6 text-center">
@@ -51,9 +51,9 @@ crossorigin="anonymous">
         <!-- Back to homepage and Edit Cart button -->
         <div class="text-center mt-5">
             <div class="btn-group" role="group" aria-label="Payment buttons">
-                <!-- Transfer Done -->
+                <!-- back to home page -->
                 <a href="../index.php" class="btn btn-info btn-lg px-4 py-2 text-white" style="text-decoration: none; font-weight: bold;">
-                    Đã chuyển khoản xong
+                    Về trang chủ
                 </a>
                 <!-- Edit Cart -->
                 <a href="../cart.php" class="btn btn-secondary btn-lg px-4 py-2 text-white" style="text-decoration: none; font-weight: bold;">

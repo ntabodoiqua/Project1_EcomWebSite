@@ -29,7 +29,7 @@ crossorigin="anonymous">
                     <div class="form-outline mb-4">
                         <!-- email -->
                         <label for="user_email" class="form-label">Email:</label>
-                        <input type="text" id="user_email" class="form-control"  placeholder="Điền email của bạn" autocomplete="off" required="required" name="user_email"/>
+                        <input type="email" id="user_email" class="form-control"  placeholder="Điền email của bạn" autocomplete="off" required="required" name="user_email"/>
                     </div>
                     <div class="form-outline mb-4">
                         <!-- avatar -->

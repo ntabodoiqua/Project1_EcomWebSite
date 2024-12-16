@@ -9,7 +9,7 @@ if(isset($_POST['insert_product'])){
     $product_price=$_POST['product_price'];
     $product_status='true';
     $product_link=$_POST['product_link'];
-
+    $num_pro_avail=$_POST['product_num'];
     // images
     $product_image1=$_FILES['product_image1']['name'];
     $product_image2=$_FILES['product_image2']['name'];
@@ -31,12 +31,13 @@ if(isset($_POST['insert_product'])){
         move_uploaded_file($temp_image3,"./product_images/$product_image3");
         // insert query
         $insert_products="insert into `products` (product_title, product_description, product_keyword, category_id, brand_id,
-                            product_image1, product_image2, product_image3, product_price, date, status, product_link) 
+                            product_image1, product_image2, product_image3, product_price, date, status, product_link, number_available) 
                             values ('$product_title', '$description', '$product_keywords', '$product_category', '$product_brands', 
-                            '$product_image1', '$product_image2', '$product_image3', '$product_price', NOW(), '$product_status', '$product_link')";
+                            '$product_image1', '$product_image2', '$product_image3', '$product_price', NOW(), '$product_status', '$product_link', '$num_pro_avail')";
         $result_query=mysqli_query($con,$insert_products);
         if($result_query){
             echo "<script>alert('Đã thêm thành công sản phẩm!')</script>";
+            echo "<script>window.open('index.php','_self')</script>";
         }
     }
 }
@@ -138,6 +139,11 @@ referrerpolicy="no-referrer" />
             <div class="form-outline mb-4 w-50 m-auto">
                 <label for="product_link" class="form-lable">Link đến website nhà sản xuất</label>
                 <input type="text" name="product_link" id="product_link" class="form-control" placeholder="Nhập liên kết" autocomplete="off" require=reqired>
+            </div>
+            <!-- number products -->
+            <div class="form-outline mb-4 w-50 m-auto">
+                <label for="product_link" class="form-lable">Số mặt hàng trong kho</label>
+                <input type="text" name="product_num" id="product_link" class="form-control" placeholder="Nhập số lượng" autocomplete="off" require=reqired>
             </div>
             <!-- submit -->
             <div class="form-outline mb-4 w-50 m-auto">
