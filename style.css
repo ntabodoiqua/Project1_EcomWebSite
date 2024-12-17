@@ -87,3 +87,327 @@
     width:100px;
     object-fit: contain;
 }
+
+.img-intro {
+    max-width: 100%;        /* Chiều rộng tối đa bằng kích thước container */
+    max-height: 300px;      /* Chiều cao tối đa là 300px */
+    object-fit: cover;      /* Giữ tỷ lệ và cắt ảnh nếu cần */
+    border-radius: 10px;    /* Bo góc ảnh nhẹ nhàng */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+}
+
+/* Toàn bộ phần sidebar */
+.apple-style-sidebar {
+    background-color: #f5f5f7; /* Màu nền tinh tế giống Apple */
+    border-radius: 12px; /* Bo góc mềm mại */
+    padding: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Font chữ */
+}
+
+/* Tách riêng từng phần bên trong sidebar */
+.sidebar-section-brands,
+.sidebar-section-categories {
+    margin-bottom: 20px; /* Khoảng cách giữa các phần */
+    padding: 10px;
+    background-color: #ffffff; /* Nền trắng nổi bật */
+    border: 1px solid #e5e5e5; /* Viền nhẹ */
+    border-radius: 8px;
+}
+
+/* Tiêu đề từng phần */
+.section-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333; /* Màu chữ nổi bật */
+    border-bottom: 1px solid #e5e5e5; /* Viền dưới để phân biệt */
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+/* Danh sách bên trong */
+.sidebar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-list li {
+    margin-bottom: 8px;
+}
+
+.sidebar-list a {
+    color: #0071e3; /* Màu xanh Apple */
+    text-decoration: none; /* Bỏ gạch dưới */
+    background-color: #f5f5f7; /* Nền đồng nhất */
+    padding: 10px;
+    border-radius: 6px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi hover */
+.sidebar-list a:hover {
+    background-color: #0071e3; /* Màu xanh đậm khi hover */
+    color: #ffffff; /* Chữ trắng khi hover */
+    transform: translateY(-2px); /* Hiệu ứng nổi lên */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Đổ bóng khi hover */
+}
+
+/* Phần tử li trong danh sách */
+.sidebar-list-item {
+    margin-bottom: 8px; /* Khoảng cách giữa các mục */
+}
+
+/* Link bên trong danh sách */
+.sidebar-link {
+    color: #0071e3; /* Màu xanh Apple */
+    text-decoration: none; /* Bỏ gạch dưới */
+    background-color: #f5f5f7; /* Nền đồng nhất */
+    padding: 10px;
+    border-radius: 6px; /* Bo góc mềm mại */
+    display: block;
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi hover */
+.sidebar-link:hover {
+    background-color: #0071e3; /* Màu xanh đậm khi hover */
+    color: #ffffff; /* Chữ trắng khi hover */
+    transform: translateY(-2px); /* Hiệu ứng nổi lên */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Đổ bóng khi hover */
+}
+
+/* Minimalist Hero Section */
+.hero-minimalist {
+    background: #f9f9f9; /* Nền xám nhạt tinh tế */
+    color: #333333; /* Màu chữ đen nhẹ */
+    text-align: center; /* Canh giữa nội dung */
+    padding: 40px 20px; /* Khoảng cách trong */
+    border-radius: 8px; /* Bo góc nhẹ */
+    border: 1px solid #e0e0e0; /* Viền mỏng tạo khối */
+    max-width: 100%; /* Chiều ngang toàn màn hình */
+    margin: 0 auto; /* Căn giữa nội dung */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng tinh tế */
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Font chữ hiện đại */
+}
+
+/* Tiêu đề chính */
+.hero-minimalist-title {
+    font-size: 2rem; /* Kích thước chữ vừa phải */
+    font-weight: 600; /* Chữ hơi đậm */
+    margin-bottom: 8px; /* Khoảng cách dưới */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Khoảng cách giữa icon và chữ */
+    text-transform: capitalize; /* Chỉ viết hoa chữ cái đầu */
+}
+
+/* Tiêu đề phụ */
+.hero-minimalist-subtitle {
+    font-size: 1rem; /* Kích thước chữ nhỏ gọn */
+    font-weight: 400; /* Chữ nhẹ hơn */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Khoảng cách giữa icon và chữ */
+    margin: 0;
+    color: #666666; /* Màu chữ xám nhẹ */
+    font-style: italic; /* Chữ nghiêng tạo cảm giác tinh tế */
+}
+
+/* Icon */
+.hero-minimalist-title i,
+.hero-minimalist-subtitle i {
+    font-size: 1.5rem; /* Kích thước icon vừa phải */
+    color: #0071e3; /* Màu xanh hiện đại */
+}
+
+/* Hiệu ứng hover */
+.hero-minimalist:hover {
+    background: #ffffff; /* Nền chuyển sang trắng */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Đổ bóng nổi bật hơn */
+    transition: all 0.3s ease; /* Hiệu ứng mượt mà */
+}
+
+/* Carousel */
+#customerReviewCarousel {
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: #f9f9f9; /* Nền sáng cho carousel */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    padding: 20px;
+  }
+  
+  /* Nội dung mỗi slide */
+  .carousel-content {
+    max-width: 400px;
+    padding: 20px;
+  }
+  
+  /* Ảnh khách hàng */
+  .customer-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%; /* Bo tròn ảnh khách hàng */
+    border: 4px solid #0071e3; /* Viền xanh cho ảnh */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .customer-img:hover {
+    transform: scale(1.1); /* Phóng to ảnh khi hover */
+  }
+  
+  /* Chữ tiêu đề khách hàng */
+  .carousel-content h5 {
+    font-size: 1.25rem;
+    color: #333; /* Màu chữ đậm */
+    font-weight: 600;
+  }
+  
+  /* Chữ review */
+  .carousel-content p {
+    font-size: 1rem;
+    color: #555; /* Màu chữ nhẹ nhàng */
+    font-style: italic;
+    margin-top: 10px;
+  }
+  
+  /* Điều khiển carousel */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: #0071e3; /* Màu xanh cho các nút điều khiển */
+    border-radius: 50%;
+  }
+  
+
+/* Footer */
+.footer {
+    background-color: #343a40; /* Màu nền đen tối */
+    color: #fff; /* Màu chữ sáng */
+}
+
+.footer h5 {
+    font-size: 1.25rem; /* Kích thước tiêu đề */
+    font-weight: bold; /* Chữ đậm */
+}
+
+.footer p {
+    font-size: 1rem;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #0071e3; /* Màu khi hover lên các liên kết */
+}
+
+/* Icon mạng xã hội */
+.footer .fab {
+    transition: transform 0.3s;
+}
+
+.footer .fab:hover {
+    transform: scale(1.2); /* Hiệu ứng phóng to icon khi hover */
+}
+
+/* Thông báo Ủy quyền chính thức */
+.authorization {
+    background-color: #f8f8f8; /* Màu nền sáng */
+    color: #333; /* Màu chữ tối */
+    border: 2px solid #0071e3; /* Viền xanh Apple */
+    border-radius: 8px; /* Góc bo tròn */
+}
+
+.authorization-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0071e3; /* Màu chữ xanh Apple */
+    margin-bottom: 10px;
+}
+
+.authorization-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.authorization-logo {
+    width: 100px; /* Kích thước logo Apple */
+    height: auto;
+}
+
+/* Giới thiệu Laptop Thế Anh */
+.img-intro {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Cải thiện bố cục cho các cột trong row */
+.row.mb-4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Tiêu đề Cam kết */
+.commitment-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0071e3;
+    margin-bottom: 20px;
+}
+
+.commitment-description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Phần Box Cam kết */
+.commitment-box {
+    background-color: #f0f0f0; /* Màu nền sáng */
+    padding: 30px;
+    border-radius: 8px; /* Bo góc */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng hover cho Box */
+.commitment-box:hover {
+    transform: translateY(-10px); /* Di chuyển nhẹ lên khi hover */
+}
+
+/* Icon của cam kết */
+.commitment-icon {
+    color: #0071e3; /* Màu xanh Apple */
+    margin-bottom: 20px;
+}
+
+/* Tiêu đề cam kết */
+.commitment-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Văn bản cam kết */
+.commitment-text {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Bố cục cho các cột cam kết */
+.row.mb-5 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}

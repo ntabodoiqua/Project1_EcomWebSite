@@ -84,9 +84,15 @@ referrerpolicy="no-referrer" />
 </nav>
 
 <!-- third child -->
- <div class="bg-light">
-    <h3 class="text-center">Laptop Thế Anh</h3>
-    <p class="text-center">Define your style</p>
+<div class="container p-4 bg-light rounded shadow-sm">
+ <div class="hero-minimalist">
+    <h3 class="hero-minimalist-title">
+        <i class="fas fa-laptop"></i> Laptop Thế Anh
+    </h3>
+    <p class="hero-minimalist-subtitle">
+        <i class="fas fa-quote-left"></i> Define your style
+    </p>
+</div>
  </div>
 
 
@@ -108,9 +114,40 @@ referrerpolicy="no-referrer" />
 <!-- column end -->
 
 
-<?php
-include("../includes/footer.php");
-?>
+<div class="footer bg-dark text-light py-4 mt-5">
+    <div class="container">
+        <div class="row">
+            <!-- Địa chỉ quán Laptop -->
+            <div class="col-md-4">
+                <h5>Địa chỉ:</h5>
+                <p>123 Đường ABC, Quận XYZ, Thành phố Hà Nội</p>
+            </div>
+            
+            <!-- Số điện thoại và Email -->
+            <div class="col-md-4">
+                <h5>Liên hệ:</h5>
+                <p><strong>Điện thoại:</strong> <a href="tel:+84987654321" class="text-light">0987 654 321</a></p>
+                <p><strong>Email:</strong> <a href="mailto:contact@laptopstore.com" class="text-light">anhnta2004@gmail.com</a></p>
+            </div>
+
+            <!-- Liên kết đến các mạng xã hội -->
+            <div class="col-md-4 text-center">
+                <h5>Theo dõi chúng tôi:</h5>
+                <a href="https://www.facebook.com/ntabodoiqua2004" target="_blank" class="text-light mx-2">
+                    <i class="fab fa-facebook fa-2x"></i>
+                </a>
+                <a href="https://github.com/ntabodoiqua/Project1_EcomWebSite" target="_blank" class="text-light mx-2">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Dòng chữ "All Rights Reserved" -->
+        <div class="text-center mt-3">
+            <p>&copy;2024 Laptop NTA. All Rights Reserved.</p>
+        </div>
+    </div>
+</div>
      </div>
 
 <!-- bootstrap js link -->

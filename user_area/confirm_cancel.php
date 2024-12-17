@@ -20,7 +20,7 @@ if (isset($_POST['confirm_cancel'])){
     $delete_query_2="DELETE FROM `orders_pending` WHERE order_id=$order_id";
     $result_1=mysqli_query($con,$delete_query_1);
     $result_2=mysqli_query($con,$delete_query_2);
-    if($result_1 != 0 and $result_2 != 0){
+    if($result_1 && $result_2){
         echo "<script><h3 class='text-center text-light'>Hủy đơn thành công!</h3></script>";
         echo "<script>window.open('profile.php?my_orders','_self')</script>";
     }
