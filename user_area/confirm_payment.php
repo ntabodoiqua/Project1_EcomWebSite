@@ -13,8 +13,8 @@ if (isset($_GET['order_id'])){
 if (isset($_POST['confirm_payment'])){
     $invoice_number=$_POST['invoice_number'];
     $deli_address=$_POST['deli_address'];
-    $insert_query="insert into `user_confirm` (order_id, invoice_number, date, 	deli_address)
-                    values ($order_id, $invoice_number, NOW(), '$deli_address')";
+    $insert_query="insert into `user_confirm` (order_id, invoice_number, date, 	deli_address, amount)
+                    values ($order_id, $invoice_number, NOW(), '$deli_address', $amount_due)";
     $result=mysqli_query($con,$insert_query);
     $update_query="UPDATE `products`
                     inner join `products_sold` on products.product_id = products_sold.product_id

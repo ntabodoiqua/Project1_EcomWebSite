@@ -169,7 +169,7 @@ if(isset($_POST['edit_product'])){
     $result_products=mysqli_query($con,$update_products);
     if($result_products){
         echo "<script>alert('Sửa sản phẩm thành công')</script>";
-        echo "<script>window.open('./index.php', '_self')</script>";
+        echo "<script>window.open('./index.php?view_products', '_self')</script>";
     }
 }
  ?>

@@ -67,25 +67,25 @@ referrerpolicy="no-referrer" />
 cart();
 ?>
 <!-- second child -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <ul class="navbar-nav me-auto">
         <?php
         if(!isset($_SESSION['username'])){
           echo "<li class='nav-item'>
-          <a class='nav-link' href='#'>Welcome Guest!</a>
+          <a class='nav-link text-white' href='#'>Welcome Guest!</a>
         </li>";
         } else {
           echo "<li class='nav-item'>
-          <a class='nav-link' href='#'>Welcome ".$_SESSION['username']."!</a>
+          <a class='nav-link text-white' href='#'>Welcome ".$_SESSION['username']."!</a>
         </li>";
         }
         if(!isset($_SESSION['username'])){
           echo "<li class='nav-item'>
-          <a class='nav-link' href='./user_area/user_login.php'>Đăng nhập</a>
+          <a class='nav-link text-white' href='./user_area/user_login.php'>Đăng nhập</a>
         </li>";
         } else {
           echo "<li class='nav-item'>
-          <a class='nav-link' href='./user_area/user_logout.php'>Đăng xuất</a>
+          <a class='nav-link text-white' href='./user_area/user_logout.php'>Đăng xuất</a>
         </li>";
         }
         ?>
@@ -149,11 +149,19 @@ cart();
  </div>
 
 <!-- last child -->
-<?php
-include("../includes/footer.php");
-?>
      </div>
+     <footer class="bg-dark text-light text-center py-3">
+        <div class="container">
+            <p class="mb-0">© 2024 Laptop NTA. All Rights Reserved.</p>
+        </div>
+    </footer>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- bootstrap js link -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+crossorigin="anonymous"></script>
 <!-- bootstrap js link -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 

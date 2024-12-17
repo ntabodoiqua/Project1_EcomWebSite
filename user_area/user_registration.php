@@ -82,11 +82,11 @@ if(isset($_POST['user_register'])){
     $user_phone=$_POST['user_phone'];
     $user_ip=getIPAddress();
     // select query
-    $select_query="select * from `user_table` where username='$user_username' or user_email='$user_email'";
+    $select_query="select * from `user_table` where username='$user_username' or user_email='$user_email' or user_phone='$user_phone'";
     $result=mysqli_query($con,$select_query);
     $rows_count=mysqli_num_rows($result);
     if($rows_count>0) {
-        echo "<script>alert('Người dùng hoặc email đã tồn tại!')</script>";
+        echo "<script>alert('Người dùng, email hoặc SĐT đã tồn tại!')</script>";
     }
     else if($user_password!=$conf_user_password){
         echo "<script>alert('Mật khẩu xác nhận không chính xác!')</script>";
