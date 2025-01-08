@@ -1,0 +1,657 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.admin_ava{
+    width: 130px;
+    object-fit: contain;
+}
+.logo {
+    width: 6%;
+    height: 6%;
+}
+.card-img-top{
+    width:100%;
+    height:200px;
+    object-fit: contain;
+}
+/* Style for id 'xemSanPham' */
+#xemSanPham {
+    display: inline-block;      
+    padding: 10px 20px;         
+    font-size: 16px;           
+    font-weight: bold;          
+    color: rgb(0, 0, 0);               
+    background-color: #00bcd4; 
+    border: none;               
+    border-radius: 5px;         
+    text-decoration: none;      
+    cursor: pointer;            
+    transition: background-color 0.3s ease; 
+}
+
+/* effect when hovering */
+#xemSanPham:hover {
+    background-color: #0097a7;  
+}
+
+/* effect when pushing */ 
+#xemSanPham:active {
+    background-color: #0097a7;  
+}
+/* Style for id 'checkout' */
+#checkOutButton {
+    display: inline-block;      
+    padding: 10px 20px;         
+    font-size: 16px;           
+    font-weight: bold;          
+    color: rgb(255, 255, 255);               
+    background-color: #00bd48; 
+    border: none;               
+    border-radius: 5px;         
+    text-decoration: none;      
+    cursor: pointer;            
+    transition: background-color 0.3s ease; 
+}
+
+/* effect when hovering */
+#checkOutButton:hover {
+    background-color: #008528;  
+}
+
+/* effect when pushing */ 
+#checkOutButton:active {
+    background-color: #006d24;  
+}
+.cart_img{
+    width:85px;
+    height: 85px;
+    object-fit: contain;
+}
+.profile_image{
+    width:100%;
+    object-fit: contain;
+    margin:auto;
+    display:block;
+    height:100%;
+}
+.image_container {
+    width: 150px; 
+    height: 150px;
+    margin: auto; 
+}
+.product_img{
+    width:100px;
+    object-fit: contain;
+}
+
+.img-intro {
+    max-width: 100%;        /* Chiều rộng tối đa bằng kích thước container */
+    max-height: 300px;      /* Chiều cao tối đa là 300px */
+    object-fit: cover;      /* Giữ tỷ lệ và cắt ảnh nếu cần */
+    border-radius: 10px;    /* Bo góc ảnh nhẹ nhàng */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+}
+
+/* Toàn bộ phần sidebar */
+.apple-style-sidebar {
+    background-color: #f5f5f7; /* Màu nền tinh tế giống Apple */
+    border-radius: 12px; /* Bo góc mềm mại */
+    padding: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Font chữ */
+}
+
+/* Tách riêng từng phần bên trong sidebar */
+.sidebar-section-brands,
+.sidebar-section-categories {
+    margin-bottom: 20px; /* Khoảng cách giữa các phần */
+    padding: 10px;
+    background-color: #ffffff; /* Nền trắng nổi bật */
+    border: 1px solid #e5e5e5; /* Viền nhẹ */
+    border-radius: 8px;
+}
+
+/* Tiêu đề từng phần */
+.section-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333; /* Màu chữ nổi bật */
+    border-bottom: 1px solid #e5e5e5; /* Viền dưới để phân biệt */
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+/* Danh sách bên trong */
+.sidebar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-list li {
+    margin-bottom: 8px;
+}
+
+.sidebar-list a {
+    color: #0071e3; /* Màu xanh Apple */
+    text-decoration: none; /* Bỏ gạch dưới */
+    background-color: #f5f5f7; /* Nền đồng nhất */
+    padding: 10px;
+    border-radius: 6px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi hover */
+.sidebar-list a:hover {
+    background-color: #0071e3; /* Màu xanh đậm khi hover */
+    color: #ffffff; /* Chữ trắng khi hover */
+    transform: translateY(-2px); /* Hiệu ứng nổi lên */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Đổ bóng khi hover */
+}
+
+/* Phần tử li trong danh sách */
+.sidebar-list-item {
+    margin-bottom: 8px; /* Khoảng cách giữa các mục */
+}
+
+/* Link bên trong danh sách */
+.sidebar-link {
+    color: #0071e3; /* Màu xanh Apple */
+    text-decoration: none; /* Bỏ gạch dưới */
+    background-color: #f5f5f7; /* Nền đồng nhất */
+    padding: 10px;
+    border-radius: 6px; /* Bo góc mềm mại */
+    display: block;
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi hover */
+.sidebar-link:hover {
+    background-color: #0071e3; /* Màu xanh đậm khi hover */
+    color: #ffffff; /* Chữ trắng khi hover */
+    transform: translateY(-2px); /* Hiệu ứng nổi lên */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Đổ bóng khi hover */
+}
+
+/* Minimalist Hero Section */
+.hero-minimalist {
+    background: #f9f9f9; /* Nền xám nhạt tinh tế */
+    color: #333333; /* Màu chữ đen nhẹ */
+    text-align: center; /* Canh giữa nội dung */
+    padding: 40px 20px; /* Khoảng cách trong */
+    border-radius: 8px; /* Bo góc nhẹ */
+    border: 1px solid #e0e0e0; /* Viền mỏng tạo khối */
+    max-width: 100%; /* Chiều ngang toàn màn hình */
+    margin: 0 auto; /* Căn giữa nội dung */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng tinh tế */
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Font chữ hiện đại */
+}
+
+/* Tiêu đề chính */
+.hero-minimalist-title {
+    font-size: 2rem; /* Kích thước chữ vừa phải */
+    font-weight: 600; /* Chữ hơi đậm */
+    margin-bottom: 8px; /* Khoảng cách dưới */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Khoảng cách giữa icon và chữ */
+    text-transform: capitalize; /* Chỉ viết hoa chữ cái đầu */
+}
+
+/* Tiêu đề phụ */
+.hero-minimalist-subtitle {
+    font-size: 1rem; /* Kích thước chữ nhỏ gọn */
+    font-weight: 400; /* Chữ nhẹ hơn */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Khoảng cách giữa icon và chữ */
+    margin: 0;
+    color: #666666; /* Màu chữ xám nhẹ */
+    font-style: italic; /* Chữ nghiêng tạo cảm giác tinh tế */
+}
+
+/* Icon */
+.hero-minimalist-title i,
+.hero-minimalist-subtitle i {
+    font-size: 1.5rem; /* Kích thước icon vừa phải */
+    color: #0071e3; /* Màu xanh hiện đại */
+}
+
+/* Hiệu ứng hover */
+.hero-minimalist:hover {
+    background: #ffffff; /* Nền chuyển sang trắng */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Đổ bóng nổi bật hơn */
+    transition: all 0.3s ease; /* Hiệu ứng mượt mà */
+}
+
+/* Carousel */
+#customerReviewCarousel {
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: #f9f9f9; /* Nền sáng cho carousel */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    padding: 20px;
+  }
+  
+  /* Nội dung mỗi slide */
+  .carousel-content {
+    max-width: 400px;
+    padding: 20px;
+  }
+  
+  /* Ảnh khách hàng */
+  .customer-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%; /* Bo tròn ảnh khách hàng */
+    border: 4px solid #0071e3; /* Viền xanh cho ảnh */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .customer-img:hover {
+    transform: scale(1.1); /* Phóng to ảnh khi hover */
+  }
+  
+  /* Chữ tiêu đề khách hàng */
+  .carousel-content h5 {
+    font-size: 1.25rem;
+    color: #333; /* Màu chữ đậm */
+    font-weight: 600;
+  }
+  
+  /* Chữ review */
+  .carousel-content p {
+    font-size: 1rem;
+    color: #555; /* Màu chữ nhẹ nhàng */
+    font-style: italic;
+    margin-top: 10px;
+  }
+  
+  /* Điều khiển carousel */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: #0071e3; /* Màu xanh cho các nút điều khiển */
+    border-radius: 50%;
+  }
+  
+
+/* Footer */
+.footer {
+    background-color: #343a40; /* Màu nền đen tối */
+    color: #fff; /* Màu chữ sáng */
+}
+
+.footer h5 {
+    font-size: 1.25rem; /* Kích thước tiêu đề */
+    font-weight: bold; /* Chữ đậm */
+}
+
+.footer p {
+    font-size: 1rem;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #0071e3; /* Màu khi hover lên các liên kết */
+}
+
+/* Icon mạng xã hội */
+.footer .fab {
+    transition: transform 0.3s;
+}
+
+.footer .fab:hover {
+    transform: scale(1.2); /* Hiệu ứng phóng to icon khi hover */
+}
+
+/* Thông báo Ủy quyền chính thức */
+.authorization {
+    background-color: #f8f8f8; /* Màu nền sáng */
+    color: #333; /* Màu chữ tối */
+    border: 2px solid #0071e3; /* Viền xanh Apple */
+    border-radius: 8px; /* Góc bo tròn */
+}
+
+.authorization-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0071e3; /* Màu chữ xanh Apple */
+    margin-bottom: 10px;
+}
+
+.authorization-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.authorization-logo {
+    width: 100px; /* Kích thước logo Apple */
+    height: auto;
+}
+
+/* Giới thiệu Laptop Thế Anh */
+.img-intro {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Cải thiện bố cục cho các cột trong row */
+.row.mb-4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Tiêu đề Cam kết */
+.commitment-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0071e3;
+    margin-bottom: 20px;
+}
+
+.commitment-description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Phần Box Cam kết */
+.commitment-box {
+    background-color: #f0f0f0; /* Màu nền sáng */
+    padding: 30px;
+    border-radius: 8px; /* Bo góc */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng hover cho Box */
+.commitment-box:hover {
+    transform: translateY(-10px); /* Di chuyển nhẹ lên khi hover */
+}
+
+/* Icon của cam kết */
+.commitment-icon {
+    color: #0071e3; /* Màu xanh Apple */
+    margin-bottom: 20px;
+}
+
+/* Tiêu đề cam kết */
+.commitment-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Văn bản cam kết */
+.commitment-text {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Bố cục cho các cột cam kết */
+.row.mb-5 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.video-title {
+    font-size: 28px; /* Kích thước chữ lớn */
+    font-weight: 700; /* Độ đậm chữ */
+    color: #4CAF50; /* Màu xanh lá chuyên nghiệp */
+    text-transform: uppercase; /* In hoa toàn bộ chữ */
+    letter-spacing: 1.5px; /* Giãn cách giữa các ký tự */
+    text-align: center; /* Căn giữa nội dung */
+    margin-bottom: 20px; /* Khoảng cách phía dưới */
+}
+
+.video-title span {
+    color: #333; /* Màu nhấn mạnh nhẹ hơn */
+    font-weight: 400; /* Độ đậm chữ nhẹ hơn cho phần nhấn mạnh */
+}
+
+
+.featured-product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .video-wrapper {
+    flex: 1;
+    max-width: 50%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-video {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9; /* Đảm bảo tỷ lệ video chuẩn */
+  }
+  
+  .product-info {
+    flex: 1;
+    margin-left: 20px;
+  }
+  
+  .product-title {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .product-description {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 16px;
+  }
+  
+  .product-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .product-link:hover {
+    background-color: #0056b3;
+  }
+  .shop-intro {
+    display: flex;
+    flex-wrap: wrap; /* Hỗ trợ thiết bị nhỏ */
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 1000px; /* Rộng hơn */
+    margin: 30px auto;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .video-container {
+    flex: 1;
+    max-width: 60%; /* Video lớn hơn */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .shop-video {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9; /* Tỷ lệ chuẩn */
+  }
+  
+  .shop-info {
+    flex: 1;
+    margin-left: 20px;
+    max-width: 35%; /* Giới hạn thông tin nhỏ hơn video */
+  }
+  
+  .shop-title {
+    font-size: 2em; /* Tiêu đề lớn hơn */
+    color: #333;
+    margin-bottom: 12px;
+  }
+  
+  .shop-description {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .shop-link {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .shop-link:hover {
+    background-color: #0056b3;
+  }
+  .shop-video-container {
+    max-width: 50%; /* Giảm kích thước video */
+    margin: 20px auto; /* Căn giữa màn hình */
+    border-radius: 8px; /* Bo góc mềm mại */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng nổi */
+  }
+  
+  .shop-video {
+    width: 100%;
+    aspect-ratio: 16/9; /* Giữ tỷ lệ chuẩn 16:9 */
+    border: none;
+  }
+  .featured-products-title {
+    font-size: 1.75rem; /* Tăng kích thước chữ để tạo sự nổi bật */
+    font-weight: bold; /* Làm chữ đậm */
+    color: #333; /* Màu chữ tối để dễ đọc */
+    text-transform: uppercase; /* Chuyển thành chữ hoa */
+    letter-spacing: 1px; /* Khoảng cách giữa các chữ */
+    margin: 20px 0; /* Khoảng cách trên và dưới */
+    padding-left: 15px; /* Khoảng cách bên trái */
+    position: relative; /* Để sử dụng cho hiệu ứng */
+  }
+  
+  .featured-products-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Đặt đường gạch dưới ngay dưới chữ */
+    width: 50%; /* Đường gạch sẽ dài bằng một nửa chiều rộng */
+    height: 3px; /* Độ dày đường gạch */
+    background-color: #007bff; /* Màu sắc đường gạch */
+    border-radius: 5px;
+  }
+  
+  
+  #productCarousel {
+    max-width: 600px; /* Giới hạn chiều rộng của slider */
+    margin: 0 auto;   /* Căn giữa slider */
+  }
+
+  #productCarousel .carousel-inner {
+    padding: 10px;    /* Thêm khoảng cách bên trong slider */
+  }
+
+  #productCarousel .carousel-item img {
+    width: 120px;     /* Giảm kích thước ảnh */
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px; /* Bo góc ảnh cho đẹp hơn */
+  }
+  .admin-avatar {
+    width: 50px;
+    height: 50px;
+}
+
+.dropdown-menu {
+    min-width: 200px;
+}
+
+.admin-nav .btn {
+    white-space: nowrap;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.admin-nav .btn:hover {
+    transform: scale(1.05);
+}
+
+.dropdown-item {
+    transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown-item.text-danger:hover {
+    background-color: #f8d7da;
+    color: #d9534f;
+}
+.chart-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;  /* Căn chỉnh các biểu đồ đều */
+  gap: 20px;  /* Khoảng cách giữa các biểu đồ */
+}
+
+.chart-container {
+  flex: 1;
+  min-width: 200px;  /* Đảm bảo mỗi biểu đồ có chiều rộng tối thiểu */
+  text-align: center;
+}
+
+
+canvas {
+  max-width: 90%;  /* Giảm chiều rộng tối đa của canvas để tạo cảm giác gọn gàng */
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Điều chỉnh kích thước canvas cho biểu đồ tròn */
+#categoryPieChart, #brandPieChart {
+  width: 200px;  /* Thay đổi kích thước để các biểu đồ tròn nhỏ gọn hơn */
+  height: 200px;  /* Giảm chiều cao cho phù hợp */
+}
+
